@@ -12,4 +12,4 @@ Market Mentor is a web based application, it supports all browsers but **Google 
 
 Developer manual found here:
 
-[Developer Manual](/developerManual.md)
+[Developer Manual](/docs/developerManual.md)
