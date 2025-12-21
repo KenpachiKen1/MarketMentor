@@ -21,7 +21,7 @@ Running on a local server
 ###
 in your command line, after installing the required items, run:
 
-**git clone https://github.com/your-org/MarketMentor.git**
+**https://github.com/KenpachiKen1/MarketMentor.git**
 
 cd into the directory
 
@@ -31,7 +31,7 @@ cd into the directory
 to set up frontend,
 
 ##
-cd to **frontend**
+cd to **frontend/marketmentor**
 
 #
 Install frontend dependencies:
@@ -42,6 +42,8 @@ Install frontend dependencies:
 run the frontend locally with
 
 **npm run dev**
+
+
 
 
 ##
@@ -58,6 +60,10 @@ run **npm install** to install all dependencies.
 
 to run the backend: use **npm start**
 
+
+#
+**YOU MAY RUN INTO AN ERROR WHEN STARTING YOUR BACKEND, THIS IS NORMAL, YOU SIMPLY JUST NEED TO MAKE YOUR OWN .env FILE IN YOUR BACKEND AND GET YOUR API KEYS.**
+
 ##
 Make sure both are running simultaneously
 
@@ -69,14 +75,27 @@ Make sure both are running simultaneously
 **In order to use this application. You need API keys from Alpha Vantage and CurrentsAPI**,  
 Without it your code will not run correctly. getting these both is almost done in an **instant**
 
+
+#
+The link for both are here
+
+CurrentsAPI: https://currentsapi.services/en
+
+AlphaVantage: https://www.alphavantage.co/support/#api-key 
+
+setting up both takes less than a minute max.
+
+
 your .env variables in your backend should be:
 
 
 **fill it in with your own credentials here**
 CURRENTS_KEY=
+
 ALPHA_KEY=
 
 supaKey=
+
 supaUrl=
 
 JWT_SECRET=
