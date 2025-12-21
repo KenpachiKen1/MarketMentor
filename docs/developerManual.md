@@ -90,6 +90,25 @@ JWT_SECRET=
 Running npm install in your backend, should have installed json web token's dependency
 
 To create the hash run this commaand in your terminal: **openssl rand -hex 32**, this will generate a hash code, **COPY AND PASTE IT INTO YOUR ENV FILE AFTER**
+#
+Authentication
+
+##Authentication is done using jsonwebtoken or jwt, which creates access tokens for verified users to access each of the endpoints that are desrcibed below.
+
+
+##
+**You must create the hash and initialize JWT_SECRET in your env file or else this program will not work.**
+
+
+###
+I chose to use JWT because, its a familiar technology for me, and I would like to to get authentication out of the way now so that when I continue to develop this app I don't have to worry about it later. JWT is very useful so I don't have to worry about unauthorized users accessing endpoints.
+
+By my own design, each accessToken lasts only 2 hours, which is more than enough time for the scope of this app... **(users can finish all 3 modules in less than 5 minutes if they know what they're doing)**
+
+Simply for development purposes I made the access token, however you can shorten it if needed just be specific about the time you shorten to, for example 1h, or 2 days or 7d, etc. **Raw numbers will be interpreted as seconds.**
+
+
+
 
 #
 BACKEND DOCUMENTATION:
@@ -111,7 +130,7 @@ Planned revisions for the future:
 ###
 API ENDPOINTS: 
 
-Each endpoint does not do a lot of foward facing work, following SOLID principles, I split functionality for certain endpoints which you can find the full details of the code in **User.js, alpha.js, and currents.js.**
+Each endpoint does not do a lot of foward facing work, following SOLID principles, I split functionality for certain endpoints which you can find the full implementation of the code in **User.js, alpha.js, and currents.js.**
 
 
 Authentication:
@@ -122,6 +141,11 @@ POST /signup creates a new user account and grants them an access token, also cr
 
 
 User authenticated endpoints:
+
+You'll notice that each endpoint here has requireAuth in it's parameters.
+
+**This is the JWT verification function I made, it makes sure that the user making the request is verified, and prevents them from making changes to an account that isn't their's.  If this function fails then the endpoint itself won't run at all.**
+
 
 GET /news/search uses Currents API to search for articles relating to the query
 
