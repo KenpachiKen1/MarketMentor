@@ -9,7 +9,7 @@ import {
 import { useNavigate, useLocation } from "react-router-dom";
 import { Flex, Menu} from "antd";
 import React from "react";
-import "../Components/Sidebar.css";
+import "../Components/sidebar.css";
 
 const Sidebar = () => {
   const navigate = useNavigate();
