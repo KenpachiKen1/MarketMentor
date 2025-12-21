@@ -67,7 +67,7 @@ const SearchResults = () => {
     <>
       <LoadingBar progress={progress} loading={loading} />
 
-      <h2>Loading times vary depedning on the search query, if the bar stops don't worry just be patient!</h2>
+      <h2>Loading times vary depending on the search query, if the bar stops don't worry just be patient!</h2>
     </>
   );
 
@@ -138,7 +138,7 @@ const SearchResults = () => {
                         width={150}
                         style={{ borderRadius: "8px" }}
                       ></img>
-                      <h5>{truncateString(article.title, 35)}</h5>
+                      <h5>{truncateString(article.title, 65)}</h5>
                       <a href={article.url}>
                         <Button>Read More</Button>
                       </a>
