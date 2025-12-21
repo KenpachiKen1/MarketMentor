@@ -56,7 +56,7 @@ const SearchResults = () => {
     <>
       <LoadingBar progress={progress} loading={loading} />
 
-      <h2>Loading times vary depedning on the query, if the bar stops don't worry just be patient!</h2>
+      <h2>Loading times vary depedning on the search query, if the bar stops don't worry just be patient!</h2>
     </>
   );
 
