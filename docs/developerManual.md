@@ -93,7 +93,8 @@ To create the hash run this commaand in your terminal: **openssl rand -hex 32**,
 #
 Authentication
 
-##Authentication is done using jsonwebtoken or jwt, which creates access tokens for verified users to access each of the endpoints that are desrcibed below.
+##
+Authentication is done using jsonwebtoken or jwt, which creates access tokens for verified users to access each of the endpoints that are desrcibed below.
 
 
 ##
@@ -105,7 +106,7 @@ I chose to use JWT because, its a familiar technology for me, and I would like t
 
 By my own design, each accessToken lasts only 2 hours, which is more than enough time for the scope of this app... **(users can finish all 3 modules in less than 5 minutes if they know what they're doing)**
 
-Simply for development purposes I made the access token, however you can shorten it if needed just be specific about the time you shorten to, for example 1h, or 2 days or 7d, etc. **Raw numbers will be interpreted as seconds.**
+Simply for development purposes I made the access token 2 hours, however you can shorten it if needed just be specific about the time you shorten to, for example 1h, or 2 days or 7d, etc. **Raw numbers will be interpreted as seconds.**
 
 
 
