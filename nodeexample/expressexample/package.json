@@ -1,0 +1,17 @@
+{
+  "name": "expressexample",
+  "version": "1.0.0",
+  "description": "express example",
+  "license": "ISC",
+  "author": "Kenneth Fadojutimi",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon -e '*'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "nodemon": "^3.1.11"
+  }
+}

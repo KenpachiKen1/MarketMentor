@@ -1,0 +1,13 @@
+.menu-bar{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-weight: bold;
+    height: 100vh;
+}
+
+
+.ant-menu-item-selected{
+    background-color: rgb(15, 76, 137) !important;
+    color: white !important;
+}
