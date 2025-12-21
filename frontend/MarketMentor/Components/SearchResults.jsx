@@ -52,9 +52,13 @@ const SearchResults = () => {
 
     
 
-    if (loading) return (
-            <LoadingBar progress={progress} loading={loading} />
-    )
+  if (loading) return (
+    <>
+      <LoadingBar progress={progress} loading={loading} />
+
+      <h2>Loading times vary depedning on the query, if the bar stops don't worry just be patient!</h2>
+    </>
+  );
 
 
     return (
