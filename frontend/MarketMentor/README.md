@@ -29,10 +29,6 @@ If you are developing a production application, we recommend using TypeScript wi
 
 
 
-Developer Manual:
-- In order to run
-
-
 
 
 
