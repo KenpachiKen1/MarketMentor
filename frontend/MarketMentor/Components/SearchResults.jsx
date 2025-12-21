@@ -50,6 +50,17 @@ const SearchResults = () => {
         }
     }, [query]);
 
+  
+  function truncateString(str, maxLength) {
+    if (str.length <= maxLength) {
+      return str
+    }
+
+
+    const truncated = str.slice(0, maxLength - 3);
+
+    return truncated + "...";
+  }
     
 
   if (loading) return (
@@ -127,7 +138,7 @@ const SearchResults = () => {
                         width={150}
                         style={{ borderRadius: "8px" }}
                       ></img>
-                      <h5>{article.title}</h5>
+                      <h5>{truncateString(article.title, 35)}</h5>
                       <a href={article.url}>
                         <Button>Read More</Button>
                       </a>
