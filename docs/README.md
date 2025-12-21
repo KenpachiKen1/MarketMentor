@@ -7,3 +7,9 @@ articles, and quizzes) and live news/financial data. Users progress through thes
 ###
 Target Browsers:
 Market Mentor is a web based application, it supports all browsers but **Google Chrome is recommended.** Mobile support has not been added yet, while the frontend will load on mobile, the layout will be a complete mess as of right now.
+
+
+
+Developer manual found here:
+
+[Developer Manual](docs/developerManual.md)
