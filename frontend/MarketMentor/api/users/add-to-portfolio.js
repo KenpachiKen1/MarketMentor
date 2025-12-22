@@ -1,6 +1,6 @@
-import { addToPortfolio } from "../helpers/User"
+import { addToPortfolio } from "../helpers/User.js"
 
-import { requireAuth } from "../auth";
+import { requireAuth } from "../auth.js";
 export default async function addtoPort(request, response) {
 
     const user = requireAuth(request, response)
