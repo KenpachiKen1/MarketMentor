@@ -175,7 +175,7 @@ export function UserProvider ({children}) {
 
   return (
     <UserContext.Provider
-      value={{profile, getProfile, error, stock_search,  daily, dailyDP, portfolio, remove_from_port, add_to_port, results, setSearch, search, update_profile, setDailyDP}}>
+      value={{profile, getProfile, error, stock_search,  daily, dailyDP, portfolio, add_to_port, results, setSearch, search, update_profile, setDailyDP}}>
       {children}
     </UserContext.Provider>
   );
