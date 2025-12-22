@@ -15,7 +15,7 @@ export function AuthProvider({ children }) {
       setError(false);
       setLoading(true);
 
-      const response = await fetch(`http://localhost:3000/signup`, {
+      const response = await fetch(`/api/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
@@ -43,7 +43,7 @@ export function AuthProvider({ children }) {
       setError(false);
       setLoading(true);
 
-      const response = await fetch(`http://localhost:3000/login`, {
+      const response = await fetch(`/api/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
@@ -72,10 +72,15 @@ export function AuthProvider({ children }) {
 
     const delete_account = async () => {
         try {
-            const response = await fetch(`http://localhost:3000/delete-account`, {
-                method: 'DELETE',
-                headers: {"Authorization" : "Bearer " + sessionStorage.getItem("access")}
-            });
+            const response = await fetch(
+              `/api/delete-account`,
+              {
+                method: "DELETE",
+                headers: {
+                  Authorization: "Bearer " + sessionStorage.getItem("access"),
+                },
+              }
+            );
 
             if (!response.ok) {
                 setError(response.error)

@@ -16,9 +16,11 @@ export function NewsProvider({ children }) {
     async function latest_news() { //onload function
         try {
             setLoading(true)
-            const data = await fetch(`http://localhost:3000/news/latest`, {
-                method: 'GET',
-                headers: {"Authorization" : "Bearer " + sessionStorage.getItem("access")}
+            const data = await fetch(`/api/news/latest`, {
+              method: "GET",
+              headers: {
+                Authorization: "Bearer " + sessionStorage.getItem("access"),
+              },
             });
 
             if (!data.ok) {
@@ -41,20 +43,10 @@ export function NewsProvider({ children }) {
         try {
 
             setProgress(0);
-             
-
-            const show_progress = setInterval(() => {
-              setProgress((p) => {
-                if (p >= 95) {
-                  return 95;
-                }
-
-                return p + 5;
-              });
-            }, 100);
+        
             setLoading(true);
             const response = await fetch(
-              `http://localhost:3000/news/search?search=${encodeURIComponent(search)}`,
+              `/api/news/search?search=${encodeURIComponent(search)}`,
               {
                 method: "GET",
                 headers: {

@@ -22,7 +22,7 @@ export function UserProvider ({children}) {
   const dailyCacheRef = useRef({});
   async function getProfile() {
     try {
-      const response = await fetch(`http://localhost:3000/profile-details`, {
+      const response = await fetch(`/api/profile-details`, {
         method: "GET",
         headers: {
           Authorization: "Bearer " + sessionStorage.getItem("access"),
@@ -30,8 +30,9 @@ export function UserProvider ({children}) {
       });
 
       if (!response.ok) {
-        setError(response);
-        return null;
+       const err = await response.json();
+       setError(err);
+       return null;
       }
 
       const data = await response.json();
@@ -49,14 +50,17 @@ export function UserProvider ({children}) {
   async function stock_search() {
 
     try {
-      const response = await fetch(`http://localhost:3000/stocks/search?ticker=${search}`, {
-        method: 'GET',
-        headers: {"Authorization" : "Bearer " + sessionStorage.getItem("access")}
+      const response = await fetch(`/api/stocks/search?ticker=${search}`, {
+        method: "GET",
+        headers: {
+          Authorization: "Bearer " + sessionStorage.getItem("access"),
+        },
       });
 
       if (!response.ok) {
-        setError(response.error)
-        return error
+      const err = await response.json();
+      setError(err);
+      return null;
       }
       
 
@@ -82,18 +86,16 @@ export function UserProvider ({children}) {
    }
 
    try {
-     const response = await fetch(
-       `http://localhost:3000/stocks/daily?ticker=${ticker}`,
-       {
-         headers: {
-           Authorization: "Bearer " + sessionStorage.getItem("access"),
-         },
-       }
-     );
+     const response = await fetch(`/api/stocks/daily?ticker=${ticker}`, {
+       headers: {
+         Authorization: "Bearer " + sessionStorage.getItem("access"),
+       },
+     });
 
      if (!response.ok) {
-       setError(response);
-       return null;
+     const err = await response.json();
+     setError(err);
+     return null;
      }
 
      const data = await response.json();
@@ -112,7 +114,7 @@ export function UserProvider ({children}) {
   async function update_profile() {
     try {
       const response = await fetch(
-        `http://localhost:3000/update-profile`,
+        `/api/update-profile`,
         {
           method: "PATCH",
           headers: { Authorization: "Bearer " + sessionStorage.getItem("access") }
@@ -134,17 +136,14 @@ export function UserProvider ({children}) {
     try {
 
       console.log("in function")
-      const response = await fetch(
-        `http://localhost:3000/user/add-to-portfolio`,
-        {
-          method: "POST",
-          headers: {
-            "Authorization": "Bearer " + sessionStorage.getItem("access"),
-            "Content-Type": 'application/json'
-          },
-          body: JSON.stringify({ ticker: ticker, company: company }),
-        }
-      );
+      const response = await fetch(`/api/user/add-to-portfolio`, {
+        method: "POST",
+        headers: {
+          Authorization: "Bearer " + sessionStorage.getItem("access"),
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ticker: ticker, company: company }),
+      });
       console.log(ticker);
       console.log(company);
 
@@ -176,17 +175,14 @@ export function UserProvider ({children}) {
 
   async function remove_from_port(ticker, company) {
     try {
-      const response = await fetch(
-        `http://localhost:3000/user/remove-from-portfolio`,
-        {
-          method: "POST",
-          headers: {
-            Authorization: "Bearer " + sessionStorage.getItem("access"),
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ ticker: ticker, company: company }),
-        }
-      );
+      const response = await fetch(`/api/user/remove-from-portfolio`, {
+        method: "POST",
+        headers: {
+          Authorization: "Bearer " + sessionStorage.getItem("access"),
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ticker: ticker, company: company }),
+      });
 
       if (!response.ok) {
         setError(response.error);
