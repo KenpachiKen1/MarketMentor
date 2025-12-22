@@ -1,10 +1,11 @@
 //this file holds only functions relating to the currents api
-const CurrentsAPI = require("currentsapi")
+import CurrentsAPI from "currentsapi";
+
 const currentsapi = new CurrentsAPI(process.env.CURRENTS_KEY);
 
 
 
-async function search_news(stock) { 
+export async function search_news(stock) { 
     try {
        const search = await currentsapi.search({
            keywords: stock,
@@ -24,7 +25,7 @@ async function search_news(stock) {
     }
 }
 
-async function latest_news() {
+export async function latest_news() {
     try { 
 
         const news = await currentsapi.latestNews({
@@ -49,4 +50,3 @@ async function latest_news() {
     
 }
 
-module.exports = {search_news, latest_news}
