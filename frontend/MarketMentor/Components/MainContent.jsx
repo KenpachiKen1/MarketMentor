@@ -97,7 +97,7 @@ function parseDailyScatterData(data) {
 
         {/* Row of three evenly spaced cards below the banner */}
         <Flex gap="24px" justify="space-between" style={{ marginTop: "50px" }}>
-          <Card title="Your portfolio" style={{ flex: 1 }}>
+          <Card title="Your portfolio" style={{ flex: 1, maxHeight: '400px'}}>
             <Typography.Title level={4}>Stocks</Typography.Title>
             <div>
               <Search
@@ -121,7 +121,7 @@ function parseDailyScatterData(data) {
             </div>
 
             <br />
-            <div style={{ display: "flex" }}>
+            <div style={{ display: "flex"}}>
               {profile.list.slice(0, 3).map((stocks, i) => (
                 <>
                   <Card

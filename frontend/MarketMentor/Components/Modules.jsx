@@ -83,6 +83,7 @@ const steps = [
           height: "300px",
           backgroundColor: "red",
           color: "white",
+          fontWeight: "bold",
         }}
       >
         {" "}
@@ -101,9 +102,10 @@ const steps = [
       <Button
         style={{
           width: "300px",
-          height: "300px",
+          height: "250px",
           backgroundColor: "red",
           color: "white",
+          fontWeight: "bold",
         }}
       >
         {" "}
@@ -122,9 +124,10 @@ const steps = [
       <Button
         style={{
           width: "300px",
-          height: "300px",
+          height: "250px",
           backgroundColor: "red",
           color: "white",
+          fontWeight: "bold",
         }}
       >
         {" "}
@@ -142,9 +145,10 @@ const steps = [
       <Button
         style={{
           width: "300px",
-          height: "300px",
+          height: "250px",
           backgroundColor: "red",
           color: "white",
+          fontWeight: "bold",
         }}
       >
         {" "}
@@ -209,7 +213,7 @@ const steps = [
           <Card>
                 <h2>{title}</h2>
                 
-                <h5>If for some reason you aren't logged into your youtube account just refresh the page!</h5>
+                <h5>Note to future self: Never use iframes again. :/ </h5>
             <Steps
               items={item.map((i) => ({ titles: i.title }))}
               current={current}
