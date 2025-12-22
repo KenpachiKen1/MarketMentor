@@ -1,4 +1,4 @@
-import { updateProgress } from "./helpers/User";
+import { updateProgress } from "./helpers/User.js";
 
 export default async function update_profile(request, response) {
   const user = request.user;

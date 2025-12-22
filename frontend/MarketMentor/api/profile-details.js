@@ -1,4 +1,4 @@
-import { getProfile } from "./helpers/User";
+import { getProfile } from "./helpers/User.js";
 
 export default async function get_profile(request, response) {
   const user = request.user;

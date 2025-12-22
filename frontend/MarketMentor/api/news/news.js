@@ -1,6 +1,6 @@
-import { search_news, latest_news } from "../helpers/currents";
+import { search_news, latest_news } from "../helpers/currents.js";
 
-import { requireAuth } from "../auth";
+import { requireAuth } from "../auth.js";
 
 
 export default async function news (request, response) {

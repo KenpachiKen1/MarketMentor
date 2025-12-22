@@ -1,4 +1,4 @@
-import { signup } from "./helpers/User";
+import { signup } from "./helpers/User.js";
 
 export default async function create_account(request, response) {
   if (request.method !== "POST") {

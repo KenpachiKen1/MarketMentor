@@ -2,12 +2,11 @@
 const supabaseurl = process.env.supaUrl
 const supabasekey = process.env.supaKey;
 
-const supabaseClient = require("@supabase/supabase-js");
-const supabase = supabaseClient.createClient(supabaseurl, supabasekey);
-
-const bcrypt = require("bcrypt")
-const jwt = require("jsonwebtoken")
-async function signup(request) {
+import { createClient } from "@supabase/supabase-js";
+const supabase = createClient(supabaseurl, supabasekey);
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+export async function signup(request) {
     try {
       
 
@@ -50,7 +49,7 @@ async function signup(request) {
     }
 }
 
-async function updateProgress(user) {
+export async function updateProgress(user) {
   
 
   const { data, error: userError } = await supabase.from("Users").select("*").eq("id", user.id).single()
@@ -74,7 +73,7 @@ async function updateProgress(user) {
 
 }
 
-async function login(request) {
+export async function login(request) {
     const username = request.body.username;
     const password = request.body.password;
 
@@ -102,24 +101,7 @@ async function login(request) {
     return { accessToken: token }
 }
 
-function requireAuth(request, response) {
-    const header = request.headers.authorization;
-
-    if (!header) {
-        return response.json({error: "Missing token"})
-    }
-
-    const token = header.replace("Bearer ", "")
-
-    try {
-        const decoded = jwt.verify(token, process.env.JWT_SECRET)
-      return decoded;
-
-    } catch {
-        return response.json({ error: "Invalid token" });
-    }
-}
-async function getProfile(user) {
+export async function getProfile(user) {
   const { data: userData, error: userError } = await supabase
     .from("Users")
     .select("id, username, progress")
@@ -172,7 +154,7 @@ async function getProfile(user) {
   };
 }
 
-async function createPortfolio(username, id) {
+export async function createPortfolio(username, id) {
   try {
     const { data, error } = await supabase
       .from("Portfolio")
@@ -189,7 +171,7 @@ async function createPortfolio(username, id) {
   }
 }
 
-async function removeFromPortfolio(user, company, ticker) {
+export async function removeFromPortfolio(user, company, ticker) {
     let { data: portfolio, error: portfolio_error } = await supabase
       .from("Portfolio")
       .select("*")
@@ -248,7 +230,7 @@ async function removeFromPortfolio(user, company, ticker) {
 
 
 //review this function later kenneth
-async function addToPortfolio(user, company, ticker) {
+export async function addToPortfolio(user, company, ticker) {
 
     let { data: portfolio, error: portfolio_error } = await supabase
       .from("Portfolio")
@@ -328,5 +310,3 @@ async function addToPortfolio(user, company, ticker) {
 
 
 
-
-module.exports = {createPortfolio, signup, addToPortfolio, removeFromPortfolio, requireAuth, login, getProfile, updateProgress}

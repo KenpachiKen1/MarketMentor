@@ -1,6 +1,6 @@
-import { daily } from "../helpers/alpha";
+import { daily } from "../helpers/alpha.js";
 
-import { requireAuth } from "../auth";
+import { requireAuth } from "../auth.js";
 
 export default async function dailyStocks(request, response) {
   try {
