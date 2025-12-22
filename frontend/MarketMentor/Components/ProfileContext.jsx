@@ -173,35 +173,6 @@ export function UserProvider ({children}) {
   }
 
 
-  async function remove_from_port(ticker, company) {
-    try {
-      const response = await fetch(`/api/user/remove-from-portfolio`, {
-        method: "POST",
-        headers: {
-          Authorization: "Bearer " + sessionStorage.getItem("access"),
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ ticker: ticker, company: company }),
-      });
-
-      if (!response.ok) {
-        setError(response.error);
-        return error;
-      }
-
-      const data = await response.json();
-
-      setPortfolio(data);
-
-      return getProfile();
-    } catch (err) {
-      setError(err);
-      return null;
-    }
-  }
-
-
-
   return (
     <UserContext.Provider
       value={{profile, getProfile, error, stock_search,  daily, dailyDP, portfolio, remove_from_port, add_to_port, results, setSearch, search, update_profile, setDailyDP}}>

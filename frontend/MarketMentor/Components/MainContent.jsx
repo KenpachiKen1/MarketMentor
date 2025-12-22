@@ -22,7 +22,6 @@ const MainContent = ({toggle}) => {
     daily,
     dailyDP,
     portfolio,
-    remove_from_port,
     add_to_port,
     results, setSearch, search, setDailyDP
     
@@ -61,11 +60,7 @@ const [selectedStock, setSelectedStock] = useState(null);
   }
 
 
-  const handle_remove = async (ticker, company) => {
-    await remove_from_port(ticker, company);
-    openStockDetails(false);
-  }
-
+ 
     const handle_stock_search = () => {
       stock_search(search); //poplulates results
       setSearchModal(true);
@@ -172,21 +167,7 @@ function parseDailyScatterData(data) {
             </Modal>
 
             <br />
-            <Modal
-              title={selectedStock}
-              open={stockDetails}
-              footer={
-                <DeleteOutlined
-                  style={{ color: "red", fontSize: "25px" }}
-                  onClick={() => {
-                    handle_remove(selectedStock, selectedCompany);
-                  }}
-                />
-              }
-              onCancel={() => openStockDetails(false)}
-            >
-              <h3>{selectedCompany}</h3>
-            </Modal>
+           
             <Typography.Text type="secondary">
               {profile.length} added
             </Typography.Text>
