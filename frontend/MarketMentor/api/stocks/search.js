@@ -1,6 +1,6 @@
-import { search } from "../helpers/alpha";
+import { search } from "../helpers/alpha.js";
 
-import { requireAuth } from "../auth";
+import { requireAuth } from "../auth.js";
 
 export default async function stockSearch(request, response) {
   try {

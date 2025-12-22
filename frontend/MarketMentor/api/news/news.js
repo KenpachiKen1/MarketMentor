@@ -8,11 +8,11 @@ export default async function news (request, response) {
         const user = requireAuth(request, response)
 
         if ((!user)) {
-            return response.stauts(405).json({ error: "user not found" });
+            return response.status(405).json({ error: "user not found" });
         }
  
         if (request.method !== 'GET') {
-            return response.stauts(405).json({error: "method not allowed"})
+            return response.status(405).json({error: "method not allowed"})
         }
 
 
@@ -20,7 +20,7 @@ export default async function news (request, response) {
             const data = await search_news(request.query.search)
 
             if (!data) {
-                return response.stauts(500).json({error: 'News Search Failed'})
+                return response.status(500).json({error: 'News Search Failed'})
             }
 
             return response.status(200).json(data);
@@ -30,7 +30,7 @@ export default async function news (request, response) {
             const data = await latest_news();
 
             if (!data) {
-              return response.stauts(500).json({ error: "News Search Failed" });
+              return response.status(500).json({ error: "News Search Failed" });
             }
 
             return response.status(200).json(data);
