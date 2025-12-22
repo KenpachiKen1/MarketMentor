@@ -8,7 +8,7 @@ export default async function news (request, response) {
         const user = requireAuth(request, response)
 
         if ((!user)) {
-            return response.stauts(405).json({ error: "user not found" });
+            return response.stauts(405).json({ error: "user not found"});
         }
  
         if (request.method !== 'GET') {
