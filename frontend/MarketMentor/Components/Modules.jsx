@@ -50,7 +50,7 @@ const steps = [
       target="_blank"
       rel="noopener noreferrer"
     >
-      <Button className="button-49"> Click to watch on youtube!</Button>
+      <Button className="button-49"> Watch vid</Button>
     </a>
   );
     
@@ -61,7 +61,7 @@ const steps = [
          target="_blank"
          rel="noopener noreferrer"
        >
-         <Button className="button-49"> Click to watch on youtube!</Button>
+         <Button className="button-49"> Watch Ticker Vid</Button>
        </a>
      );
 
@@ -73,7 +73,7 @@ const steps = [
     >
       <Button className="button-49">
         {" "}
-        Click to read this article on Ticker symbols
+        Read Article
       </Button>
     </a>
   );
@@ -81,11 +81,11 @@ const steps = [
     
   const tradingVid = (
     <a
-      href="https://youtu.be/embed/QuTXaErpKxY?si=4DGCA9ARJSIhuQsp "
+      href="https://youtu.be/g2dC8v2Zgvk?si=xSx3bxLFqmhhE6sM"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <Button className="button-49"> Click to watch on youtube!</Button>
+      <Button className="button-49"> Watch vid</Button>
     </a>
   );
     
@@ -102,7 +102,7 @@ className="button-49"
 
       >
         {" "}
-        Click to read this article!
+        Read Article
       </Button>
     </a>
   );
@@ -113,7 +113,7 @@ className="button-49"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <Button className="button-49"> Click to read this article!</Button>
+      <Button className="button-49"> Read Article</Button>
     </a>
   );
 
