@@ -11,6 +11,9 @@ const jwt = require("jsonwebtoken")
 async function signup(request) {
     try {
       
+
+      console.log("supaUrl:", process.env.supaUrl);
+      console.log("supaKey:", process.env.supaKey);
       const username = request.body.username;
       const password = request.body.password;
       const progress = 0;

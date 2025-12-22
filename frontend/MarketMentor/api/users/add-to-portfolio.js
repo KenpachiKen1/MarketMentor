@@ -1,4 +1,4 @@
-import { addToPortfolio } from "../../../../backend/User";
+import { addToPortfolio } from "../helpers/User"
 
 import { requireAuth } from "../auth";
 export default async function addtoPort(request, response) {
