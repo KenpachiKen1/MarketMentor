@@ -16,12 +16,15 @@ export function NewsProvider({ children }) {
     async function latest_news() { //onload function
         try {
             setLoading(true)
-            const data = await fetch(`/api/news/latest`, {
-              method: "GET",
-              headers: {
-                Authorization: "Bearer " + sessionStorage.getItem("access"),
-              },
-            });
+            const data = await fetch(
+              `/api/news`,
+              {
+                method: "GET",
+                headers: {
+                  Authorization: "Bearer " + sessionStorage.getItem("access"),
+                },
+              }
+            );
 
             if (!data.ok) {
                 setError(data.error)
@@ -46,7 +49,7 @@ export function NewsProvider({ children }) {
         
             setLoading(true);
             const response = await fetch(
-              `/api/news/search?search=${encodeURIComponent(search)}`,
+              `/api/news?search=${encodeURIComponent(term)}`,
               {
                 method: "GET",
                 headers: {
