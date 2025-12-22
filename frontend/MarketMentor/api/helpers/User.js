@@ -72,7 +72,7 @@ async function updateProgress(user) {
 
 }
 
-async function login(request, response) {
+async function login(request) {
     const username = request.body.username;
     const password = request.body.password;
 
@@ -97,10 +97,10 @@ async function login(request, response) {
         {expiresIn: "2h"}
     )
 
-    return response.json({ accessToken: token })
+    return { accessToken: token }
 }
 
-function requireAuth(request, response, next) {
+function requireAuth(request, response) {
     const header = request.headers.authorization;
 
     if (!header) {
@@ -111,8 +111,7 @@ function requireAuth(request, response, next) {
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET)
-        request.user = decoded
-        next();
+      return decoded;
 
     } catch {
         return response.json({ error: "Invalid token" });
