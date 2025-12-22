@@ -41,83 +41,116 @@ const steps = [
   }
 ]
   const tickerVid = (
-    <Iframe
-      url="https://youtu.be/agAHRwOqQd4?si=zDjOBsrnNpjLr4P-"
-      width="700px"
-      height="350px"
-      id=""
-      className=""
-      display="block"
-      position="relative"
-      loading="lazy"
-    />
+    <a
+      href="https://youtu.be/agAHRwOqQd4?si=zDjOBsrnNpjLr4P-"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Button
+        style={{
+          width: "300px",
+          height: "300px",
+          backgroundColor: "red",
+          color: "white",
+        }}
+      >
+        {" "}
+        Click to watch on youtube!
+      </Button>
+    </a>
   );
     
     
      const marketVid = (
-       <Iframe
-         url="https://youtu.be/T37YvxMTofc?si=fJec1kNs1lo451wO"
-         width="700px"
-         height="350px"
-         id=""
-         className=""
-         display="block"
-         position="relative"
-         loading="lazy"
-       />
+       <a
+         href="https://youtu.be/T37YvxMTofc?si=GVxLoDLp7SanOAik "
+         target="_blank"
+         rel="noopener noreferrer"
+       >
+         <Button style={{width: '300px', height: '300px', backgroundColor: 'red', color: 'white'}}> Click to watch on youtube!</Button>
+       </a>
      );
 
   const TickerReading = (
-    <Iframe
-      url="https://www.investopedia.com/terms/s/stocksymbol.asp"
-      width="700px"
-      height="350px"
-      id=""
-      className=""
-      display="block"
-      position="relative"
-      loading="lazy"
-    />
+    <a
+      href="https://www.investopedia.com/terms/s/stocksymbol.asp "
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Button
+        style={{
+          width: "300px",
+          height: "300px",
+          backgroundColor: "red",
+          color: "white",
+        }}
+      >
+        {" "}
+        Click to read this article on Ticker symbols
+      </Button>
+    </a>
   );
     
     
-     const tradingVid = (
-       <Iframe
-         url="https://youtu.be/QuTXaErpKxY?si=4DGCA9ARJSIhuQsp"
-         width="700px"
-         height="350px"
-         id=""
-         className=""
-         display="block"
-         position="relative"
-         loading="lazy"
-       />
-     );
+  const tradingVid = (
+    <a
+      href="https://youtu.be/embed/QuTXaErpKxY?si=4DGCA9ARJSIhuQsp "
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Button
+        style={{
+          width: "300px",
+          height: "300px",
+          backgroundColor: "red",
+          color: "white",
+        }}
+      >
+        {" "}
+        Click to watch on youtube!
+      </Button>
+    </a>
+  );
     
-      const TradingReading = (
-        <Iframe
-          url="https://www.investopedia.com/terms/t/trading-platform.asp"
-          width="700px"
-          height="350px"
-          id=""
-          className=""
-          display="block"
-          position="relative"
-          loading="lazy"
-        />
-      );
+  const TradingReading = (
+    <a
+      href="https://www.investopedia.com/terms/t/trading-platform.asp
+        "
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Button
+        style={{
+          width: "300px",
+          height: "300px",
+          backgroundColor: "red",
+          color: "white",
+        }}
+      >
+        {" "}
+        Click to read this article!
+      </Button>
+    </a>
+  );
     
   const MarketReading = (
-    <Iframe
-      url="https://www.nerdwallet.com/investing/learn/bullish-vs-bearish"
-      width="700px"
-      height="350px"
-      id=""
-      className=""
-      display="block"
-      position="relative"
-      loading="lazy"
-    />
+    <a
+      href="https://www.nerdwallet.com/investing/learn/bullish-vs-bearish"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Button
+        style={{
+          width: "300px",
+          height: "300px",
+          backgroundColor: "red",
+          color: "white",
+        }}
+      >
+        {" "}
+        Click to read this article!
+      </Button>
+    </a>
   );
 
   const MarketItems = [

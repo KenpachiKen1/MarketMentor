@@ -11,7 +11,9 @@ Installation and set up.
 You need to have the following installed:
 
 -Node.js (**Version 18 or higher is recommend**)
+
 -npm
+
 -Git
 
 
@@ -21,20 +23,20 @@ Running on a local server
 ###
 in your command line, after installing the required items, run:
 
-**https://github.com/KenpachiKen1/MarketMentor.git**
+git clone **https://github.com/KenpachiKen1/MarketMentor.git**
 
 cd into the directory
 
 **cd MarketMentor**
 
 
-to set up frontend,
+to set up app,
 
 ##
 cd to **frontend/marketmentor**
 
 #
-Install frontend dependencies:
+Install all dependencies:
 
 **npm install**
 
@@ -45,27 +47,7 @@ run the frontend locally with
 
 
 
-
-##
-To set up your backend,
-
-###
-at the root of Market Mentor
-
-###
-cd backend
-
-
-run **npm install** to install all dependencies.
-
-to run the backend: use **npm start**
-
-
-#
-**YOU MAY RUN INTO AN ERROR WHEN STARTING YOUR BACKEND, THIS IS NORMAL, YOU SIMPLY JUST NEED TO MAKE YOUR OWN .env FILE IN YOUR BACKEND AND GET YOUR API KEYS.**
-
-##
-Make sure both are running simultaneously
+**YOU MAY RUN INTO AN ERROR WHEN STARTING, THIS IS NORMAL, YOU SIMPLY JUST NEED TO MAKE YOUR OWN .env FILE IN YOUR BACKEND AND GET YOUR API KEYS.**
 
 #
 **ENV REQUIREMENTS**
@@ -74,7 +56,6 @@ Make sure both are running simultaneously
 
 **In order to use this application. You need API keys from Alpha Vantage and CurrentsAPI**,  
 Without it your code will not run correctly. getting these both is almost done in an **instant**
-
 
 #
 The link for both are here
@@ -85,9 +66,7 @@ AlphaVantage: https://www.alphavantage.co/support/#api-key
 
 setting up both takes less than a minute max.
 
-
 your .env variables in your backend should be:
-
 
 **fill it in with your own credentials here**
 CURRENTS_KEY=
@@ -131,7 +110,7 @@ Simply for development purposes I made the access token 2 hours, however you can
 
 
 #
-BACKEND DOCUMENTATION:
+ROUTE/BACKEND DOCUMENTATION:
 
 ##
 Each function outside of the signup function requires a user to be authenticated (having their own account made through the signup function), so they can't just use each endpoint whenever, this is useful consiidering some endpoints require API keys, this is why I decided to use JSON Web Token for authentication purposes.
@@ -139,7 +118,7 @@ Each function outside of the signup function requires a user to be authenticated
 ##
 TESTS:
 Market Mentor does not have any automated tests:
-- This is a know limitation:
+- This is a known limitation:
 Endpoint testing was done manually through the use of Postman and just simple frontend responses.
 
 
@@ -150,7 +129,7 @@ Planned revisions for the future:
 ###
 API ENDPOINTS: 
 
-Each endpoint does not do a lot of foward facing work, following SOLID principles, I split functionality for certain endpoints which you can find the full implementation of the code in **User.js, alpha.js, and currents.js.**
+Each endpoint does not do a lot of foward facing work, following SOLID principles, I split functionality for certain endpoints which you can find the full implementation of the code in **User.js, alpha.js, and currents.js.** in helper folder
 
 
 Authentication:
@@ -177,7 +156,7 @@ GET /stocks/search uses Alpha Vantage API to retrieve a list of stocks matching 
 
 POST /user/add-to-portfolio doesn't use any API's simply adds a ticker symbol and the stock to the users portfolio
 
-POST /user/add-to-portfolio removes the given stock from the users portfolio
+POST /user/remove-to-portfolio removes the given stock from the users portfolio (WAS A FUNCTION but vercel only allows 12 serverless functions :( on their free plan))
 
 PATCH /update-profile updates the users progress when they complete a learning module.
 
@@ -189,12 +168,15 @@ PATCH /update-profile updates the users progress when they complete a learning m
 ##
 In the learning modules section, the frontend uses IFrame to embad webpages like youtube and new articles, this may cause slight glitches and console warnings, simply refresh your page or wait for everything to load correctly.
 
+##
+UPDATE: removed iframe entirely, tried it on different devices other than my own, turns out the sources I used did not allow video embedding :/
+
 
 ##
 No automated tests yet
 
 ##
-API LIMITS for Alpha Vantage prevents certain stocks from having their daily scatter plot to show, it works for most stocks but ones that break are **AAPL, NFLX, and MSFT** from the testing I have done.
+API LIMITS for Alpha Vantage prevents certain stocks from having their daily scatter plot to show, it works for most stocks but ones that seemed to break are **AAPL, NFLX, and MSFT** from the testing I have done.
 
 
 
