@@ -1,5 +1,4 @@
 //this file holds only functions relating to the currents api
-require("dotenv").config()
 const CurrentsAPI = require("currentsapi")
 const currentsapi = new CurrentsAPI(process.env.CURRENTS_KEY);
 

@@ -1,5 +1,4 @@
 //This file holds all functions relating to user accounts
-require("dotenv").config();
 const supabaseurl = process.env.supaUrl
 const supabasekey = process.env.supaKey;
 

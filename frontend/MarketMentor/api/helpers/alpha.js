@@ -1,5 +1,4 @@
 //this file only holds functions relating to the Alpha Vantage API
-require("dotenv").config();
 const alpha_key = process.env.ALPHA_KEY
 
 async function daily(ticker) {
