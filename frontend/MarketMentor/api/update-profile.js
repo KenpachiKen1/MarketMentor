@@ -1,7 +1,13 @@
 import { updateProgress } from "./helpers/User.js";
 
+import { requireAuth } from "./auth.js";
+
 export default async function update_profile(request, response) {
-  const user = request.user;
+  const user = requireAuth(request, response);
+
+  if (!user) {
+    return;
+  }
   const profile = await updateProgress(user);
 
   if (!profile) {
