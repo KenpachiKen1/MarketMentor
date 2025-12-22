@@ -16,7 +16,7 @@ export function NewsProvider({ children }) {
     async function latest_news() { //onload function
         try {
             setLoading(true)
-            const data = await fetch(`/api/news`,
+            const data = await fetch(`/api/news/news`,
               {
                 method: "GET",
                 headers: {
@@ -48,7 +48,7 @@ export function NewsProvider({ children }) {
         
             setLoading(true);
             const response = await fetch(
-              `/api/news?search=${encodeURIComponent(search)}`,
+              `/api/news/news?search=${encodeURIComponent(search)}`,
               {
                 method: "GET",
                 headers: {

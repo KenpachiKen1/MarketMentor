@@ -136,7 +136,7 @@ export function UserProvider ({children}) {
     try {
 
       console.log("in function")
-      const response = await fetch(`/api/user/add-to-portfolio`, {
+      const response = await fetch(`/api/users/add-to-portfolio`, {
         method: "POST",
         headers: {
           Authorization: "Bearer " + sessionStorage.getItem("access"),
