@@ -1,7 +1,11 @@
 import { getProfile } from "./helpers/User.js";
 
+import { requireAuth } from "./auth.js";
+
+
 export default async function get_profile(request, response) {
-  const user = request.user;
+    const user = requireAuth(request, response);
+    if (!user) return;
   const profile = await getProfile(user);
 
   if (!profile) {
