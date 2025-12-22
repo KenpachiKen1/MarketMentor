@@ -6,10 +6,12 @@ import Quiz2 from "./Quiz2";
 import Quiz3 from "./Quiz3";
 import Quiz1 from "./Quiz1";
 
-import Iframe from "react-iframe";
 
 import { useAccount } from "./ProfileContext";
 const { Header, Content, Footer, Sider } = Layout;
+
+
+import"../Components/Modules.css"
 
 import Sidebar from "./sidebar";
 const Modules = () => {
@@ -32,6 +34,8 @@ const startTour = () => {
     setTimeout(() => setOpen(true), 100);
 }
 
+const [hovered, setHovered] = useState(false);
+
 
 const steps = [
   {
@@ -46,17 +50,7 @@ const steps = [
       target="_blank"
       rel="noopener noreferrer"
     >
-      <Button
-        style={{
-          width: "300px",
-          height: "300px",
-          backgroundColor: "red",
-          color: "white",
-        }}
-      >
-        {" "}
-        Click to watch on youtube!
-      </Button>
+      <Button className="button-49"> Click to watch on youtube!</Button>
     </a>
   );
     
@@ -67,7 +61,7 @@ const steps = [
          target="_blank"
          rel="noopener noreferrer"
        >
-         <Button style={{width: '300px', height: '300px', backgroundColor: 'red', color: 'white'}}> Click to watch on youtube!</Button>
+         <Button className="button-49"> Click to watch on youtube!</Button>
        </a>
      );
 
@@ -77,15 +71,7 @@ const steps = [
       target="_blank"
       rel="noopener noreferrer"
     >
-      <Button
-        style={{
-          width: "300px",
-          height: "300px",
-          backgroundColor: "red",
-          color: "white",
-          fontWeight: "bold",
-        }}
-      >
+      <Button className="button-49">
         {" "}
         Click to read this article on Ticker symbols
       </Button>
@@ -99,18 +85,7 @@ const steps = [
       target="_blank"
       rel="noopener noreferrer"
     >
-      <Button
-        style={{
-          width: "300px",
-          height: "250px",
-          backgroundColor: "red",
-          color: "white",
-          fontWeight: "bold",
-        }}
-      >
-        {" "}
-        Click to watch on youtube!
-      </Button>
+      <Button className="button-49"> Click to watch on youtube!</Button>
     </a>
   );
     
@@ -122,13 +97,9 @@ const steps = [
       rel="noopener noreferrer"
     >
       <Button
-        style={{
-          width: "300px",
-          height: "250px",
-          backgroundColor: "red",
-          color: "white",
-          fontWeight: "bold",
-        }}
+className="button-49" 
+      
+
       >
         {" "}
         Click to read this article!
@@ -142,18 +113,7 @@ const steps = [
       target="_blank"
       rel="noopener noreferrer"
     >
-      <Button
-        style={{
-          width: "300px",
-          height: "250px",
-          backgroundColor: "red",
-          color: "white",
-          fontWeight: "bold",
-        }}
-      >
-        {" "}
-        Click to read this article!
-      </Button>
+      <Button className="button-49"> Click to read this article!</Button>
     </a>
   );
 
