@@ -73,7 +73,7 @@ const Banner = ({ profile }) => {
             <Grow
               in={true}
               style={{ transformOrigin: "0 0 0" }}
-              {...(true ? { timeout: 500 + index * 200 } : {})}
+              {...(true ? { timeout: 1000 } : {})}
             >
               <Card style={{ height: "300px", width: "300px", margin: "10px" }}>
                 <img
@@ -153,9 +153,9 @@ const Banner = ({ profile }) => {
                   <a
                     href={article.url}
                     target="_blank"
-                    style={{ marginTop: "auto" }}
+                    style={{ marginTop: "auto"}}
                   >
-                    <Button type="primary" style={{ backgroundColor: "navy" }}>
+                    <Button type="primary" style={{ backgroundColor: 'navy'}}>
                       <strong>Read More</strong>
                     </Button>
                   </a>
